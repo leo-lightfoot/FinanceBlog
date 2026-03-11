@@ -35,17 +35,6 @@ layout: default
             {% endif %}
         </header>
 
-        {% if page.image %}
-        <div class="post-hero-image">
-            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-        </div>
-        {% endif %}
-
-        <!-- Post Body -->
-        <div class="post-body">
-            {{ content }}
-        </div>
-
         <!-- Social Share -->
         <div class="post-share">
             <span class="post-share-label">Share</span>
@@ -75,6 +64,17 @@ layout: default
             });
         }
         </script>
+
+        {% if page.image %}
+        <div class="post-hero-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+        <!-- Post Body -->
+        <div class="post-body">
+            {{ content }}
+        </div>
 
         <!-- Post Footer -->
         <footer class="post-footer">

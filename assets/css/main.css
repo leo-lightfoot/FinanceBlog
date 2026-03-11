@@ -637,9 +637,9 @@ img { max-width: 100%; height: auto; display: block; }
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
 }
 .post-share-label {
