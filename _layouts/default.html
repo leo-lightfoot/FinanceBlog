@@ -6,6 +6,7 @@
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.author.name }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
@@ -16,8 +17,17 @@
     <link rel="canonical" href="{{ page.url | absolute_url }}">
 
     <!-- Security headers (meta equivalents — HTTP headers not available on GitHub Pages) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src https://www.google-analytics.com https://analytics.google.com; base-uri 'self'; form-action 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C3D6NBD6G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9C3D6NBD6G');
+    </script>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

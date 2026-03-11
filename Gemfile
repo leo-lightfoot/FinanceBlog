@@ -4,6 +4,7 @@ gem "jekyll", "~> 4.3"
 gem "jekyll-paginate"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
+gem "jekyll-feed"
 
 # Windows compatibility
 gem "wdm", "~> 0.1" if Gem.win_platform?

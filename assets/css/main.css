@@ -6,7 +6,7 @@
     --bg-secondary: #132f4c;
     --bg-card: #1e3a5f;
     --text-primary: #e3f2fd;
-    --text-secondary: #ccd6e0;
+    --text-secondary: #d8eaf8;
     --accent: #1976d2;
     --accent-light: #42a5f5;
     --accent-bg: rgba(25, 118, 210, 0.1);
@@ -129,7 +129,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: rgba(255, 255, 255, 0.92);
 }
 .header-inner {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -205,7 +205,7 @@ img { max-width: 100%; height: auto; display: block; }
     min-height: calc(100vh - 140px);
 }
 .blog-container {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 3rem 2rem;
 }
@@ -442,7 +442,7 @@ img { max-width: 100%; height: auto; display: block; }
    POST PAGE
    ================================================ */
 .post-container {
-    max-width: 760px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 2rem 2rem 4rem;
     position: relative;
@@ -655,7 +655,7 @@ img { max-width: 100%; height: auto; display: block; }
     z-index: 1;
 }
 .footer-inner {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -686,7 +686,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ================================================
    SYNTAX HIGHLIGHTING (Rouge)
    ================================================ */
-.highlight .c, .highlight .c1, .highlight .cm { color: #6a737d; }
+.highlight .c, .highlight .c1, .highlight .cm { color: #9ab3c5; }
 .highlight .k, .highlight .kd, .highlight .kn { color: #f97583; }
 .highlight .s, .highlight .s1, .highlight .s2 { color: #9ecbff; }
 .highlight .n, .highlight .nx { color: #e1e4e8; }
