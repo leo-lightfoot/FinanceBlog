@@ -10,6 +10,8 @@ author:
   portfolio: "https://abdulmalik.de"
 
 # Build settings
+timezone: Europe/Berlin
+future: false
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
