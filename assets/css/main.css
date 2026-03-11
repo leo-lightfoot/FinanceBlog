@@ -631,6 +631,48 @@ img { max-width: 100%; height: auto; display: block; }
 .post-author-links a:hover { color: var(--accent-light); }
 
 /* ================================================
+   SOCIAL SHARE
+   ================================================ */
+.post-share {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+.post-share-label {
+    color: var(--text-secondary);
+    font-size: 0.825rem;
+    font-weight: 500;
+    margin-right: 0.25rem;
+}
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius);
+    font-size: 0.825rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-family: inherit;
+}
+.share-btn:hover {
+    background: var(--accent-bg);
+    color: var(--text-primary);
+    border-color: var(--accent-light);
+}
+.share-btn--twitter:hover { color: #1d9bf0; border-color: #1d9bf0; }
+.share-btn--linkedin:hover { color: #0a66c2; border-color: #0a66c2; }
+
+/* ================================================
    RELATED POSTS
    ================================================ */
 .related-posts { margin-top: 3rem; }

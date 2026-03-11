@@ -6,6 +6,7 @@ category: Projects
 date: 2026-03-11
 tags: [Python, PCA, Fixed Income, Yield Curve, Risk Analytics]
 github: "https://github.com/leo-lightfoot/Yield_Curve_PCA"
+image: /assets/images/Yield_curve.png
 ---
 
 ## Overview
@@ -71,4 +72,4 @@ Total P&L is decomposed as:
 
 ## Code & Repo
 
-Full implementation available on [GitHub](https://github.com/leo-lightfoot/Yield_Curve_PCA).
+Full implementation available on [GitHub](https://github.com/leo-lightfoot/Yield_Curve_PCA) and on display at [WebSite](https://leo-lightfoot.github.io/Yield_Curve_PCA).
