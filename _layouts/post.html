@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<div class="post-container">
+
+    <!-- Back link -->
+    <a href="{{ '/' | relative_url }}" class="post-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to all posts
+    </a>
+
+    <article class="post-article">
+
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="post-header-meta">
+                <span class="post-category post-category--{{ page.category | downcase }}">{{ page.category }}</span>
+                <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                <span class="post-read-time">{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            {% if page.tags %}
+            <div class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+
+        {% if page.image %}
+        <div class="post-hero-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+        <!-- Post Body -->
+        <div class="post-body">
+            {{ content }}
+        </div>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="post-author">
+                <div class="post-author-info">
+                    <strong>Abdul Malik</strong>
+                    <span>Capital Markets & Financial Technology</span>
+                </div>
+                <div class="post-author-links">
+                    <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="{{ site.author.portfolio }}" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                </div>
+            </div>
+        </footer>
+
+    </article>
+
+    <!-- Related posts -->
+    {% assign related = site.posts | where: "category", page.category | limit: 3 %}
+    {% assign filtered_related = "" | split: "" %}
+    {% for p in related %}
+        {% unless p.url == page.url %}
+            {% assign filtered_related = filtered_related | push: p %}
+        {% endunless %}
+    {% endfor %}
+    {% if filtered_related.size > 0 %}
+    <section class="related-posts">
+        <h3>More {{ page.category }}</h3>
+        <div class="related-posts-grid">
+            {% for rpost in filtered_related limit:2 %}
+            <article class="post-card post-card--small">
+                <div class="post-card-content">
+                    <div class="post-card-meta">
+                        <span class="post-date">{{ rpost.date | date: "%b %d, %Y" }}</span>
+                    </div>
+                    <h4 class="post-card-title">
+                        <a href="{{ rpost.url | relative_url }}">{{ rpost.title }}</a>
+                    </h4>
+                    <p class="post-card-excerpt">{{ rpost.excerpt | strip_html | truncate: 100 }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+</div>

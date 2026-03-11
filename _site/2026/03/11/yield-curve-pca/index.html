@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Curve PCA & P&L Attribution | Abdul Malik | Finance & Technology</title>
+    <meta name="description" content="Overview
+">
+    <meta name="author" content="Abdul Malik">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Yield Curve PCA & P&L Attribution">
+    <meta property="og:description" content="Overview
+">
+    <meta property="og:url" content="http://localhost:4000/2026/03/11/yield-curve-pca/">
+
+    <link rel="canonical" href="http://localhost:4000/2026/03/11/yield-curve-pca/">
+
+    <!-- Security headers (meta equivalents — HTTP headers not available on GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Yield Curve PCA &amp; P&amp;L Attribution | Abdul Malik Finance &amp; Technology</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Yield Curve PCA &amp; P&amp;L Attribution" />
+<meta name="author" content="Abdul Malik" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
+<link rel="canonical" href="http://localhost:4000/2026/03/11/yield-curve-pca/" />
+<meta property="og:url" content="http://localhost:4000/2026/03/11/yield-curve-pca/" />
+<meta property="og:site_name" content="Abdul Malik Finance &amp; Technology" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-03-11T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Yield Curve PCA &amp; P&amp;L Attribution" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abdul Malik"},"dateModified":"2026-03-11T00:00:00+01:00","datePublished":"2026-03-11T00:00:00+01:00","description":"Overview","headline":"Yield Curve PCA &amp; P&amp;L Attribution","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2026/03/11/yield-curve-pca/"},"url":"http://localhost:4000/2026/03/11/yield-curve-pca/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <div class="spotlight" id="spotlight"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="darkBtn" class="active" aria-label="Switch to dark mode">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            Dark
+        </button>
+        <button id="lightBtn" aria-label="Switch to light mode">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            Light
+        </button>
+    </div>
+
+    <header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="site-logo">
+            <span class="logo-name">Abdul Malik</span>
+            <span class="logo-divider">/</span>
+            <span class="logo-blog">Finance & Technology</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/" class="nav-link ">All</a>
+            <a href="/categories/projects" class="nav-link ">Projects</a>
+            <a href="/categories/articles" class="nav-link ">Articles</a>
+            <a href="/categories/job-prep" class="nav-link ">Job Prep</a>
+            <a href="https://abdulmalik.de" class="nav-link nav-link--portfolio" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main class="main-content">
+        <div class="post-container">
+
+    <!-- Back link -->
+    <a href="/" class="post-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to all posts
+    </a>
+
+    <article class="post-article">
+
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="post-header-meta">
+                <span class="post-category post-category--projects">Projects</span>
+                <span class="post-date">March 11, 2026</span>
+                <span class="post-read-time">2 min read</span>
+            </div>
+            <h1 class="post-title">Yield Curve PCA & P&L Attribution</h1>
+            
+            <p class="post-subtitle">Decomposing US Treasury yield curve movements into principal components and attributing portfolio P&L to each factor.</p>
+            
+            
+            <div class="post-tags">
+                
+                <span class="tag">Python</span>
+                
+                <span class="tag">PCA</span>
+                
+                <span class="tag">Fixed Income</span>
+                
+                <span class="tag">Yield Curve</span>
+                
+                <span class="tag">Risk Analytics</span>
+                
+            </div>
+            
+        </header>
+
+        
+
+        <!-- Post Body -->
+        <div class="post-body">
+            <h2 id="overview">Overview</h2>
+
+<p>This project decomposes US Treasury yield curve movements into their principal components, calibrates historical shocks, prices a fixed income portfolio, and attributes P&amp;L under each scenario using FRED data.</p>
+
+<p>The three dominant PCA factors — <strong>level</strong>, <strong>slope</strong>, and <strong>curvature</strong> — explain over 95% of historical yield curve variance, making them powerful tools for scenario analysis and risk attribution.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Fixed income portfolio managers constantly face the question: <em>why did my portfolio P&amp;L change today?</em> Breaking down P&amp;L into interpretable factors (parallel shift, steepening/flattening, twist) is far more useful than a single unexplained number.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<h3 id="1-data-collection">1. Data Collection</h3>
+
+<p>Historical US Treasury yields pulled from FRED for maturities: 3M, 6M, 1Y, 2Y, 3Y, 5Y, 7Y, 10Y, 20Y, 30Y.</p>
+
+<h3 id="2-pca-decomposition">2. PCA Decomposition</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># Compute daily yield changes
+</span><span class="n">yield_changes</span> <span class="o">=</span> <span class="n">yields</span><span class="p">.</span><span class="nf">diff</span><span class="p">().</span><span class="nf">dropna</span><span class="p">()</span>
+
+<span class="c1"># Fit PCA
+</span><span class="n">pca</span> <span class="o">=</span> <span class="nc">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">pca</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">yield_changes</span><span class="p">)</span>
+
+<span class="c1"># Explained variance
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">PC1 (Level): </span><span class="si">{</span><span class="n">pca</span><span class="p">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="o">%</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">PC2 (Slope): </span><span class="si">{</span><span class="n">pca</span><span class="p">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="o">%</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">PC3 (Curvature): </span><span class="si">{</span><span class="n">pca</span><span class="p">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="o">%</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-portfolio-pricing">3. Portfolio Pricing</h3>
+
+<p>Each bond in the portfolio is priced under each PCA shock scenario using modified duration and convexity adjustments.</p>
+
+<h3 id="4-pl-attribution">4. P&amp;L Attribution</h3>
+
+<p>Total P&amp;L is decomposed as:</p>
+
+<blockquote>
+  <p>ΔP&amp;L = β₁·PC1_shock + β₂·PC2_shock + β₃·PC3_shock + residual</p>
+</blockquote>
+
+<h2 id="results">Results</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>Explained Variance</th>
+      <th>P&amp;L Contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Level (PC1)</td>
+      <td>82.3%</td>
+      <td>-€45,200</td>
+    </tr>
+    <tr>
+      <td>Slope (PC2)</td>
+      <td>11.1%</td>
+      <td>+€12,800</td>
+    </tr>
+    <tr>
+      <td>Curvature (PC3)</td>
+      <td>4.2%</td>
+      <td>-€3,100</td>
+    </tr>
+    <tr>
+      <td>Residual</td>
+      <td>2.4%</td>
+      <td>+€1,500</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>The level factor dominates — a 25bps parallel shift accounts for the majority of P&amp;L swings</li>
+  <li>Slope risk (steepening/flattening) is the second most important driver</li>
+  <li>Curvature effects are small but material for barbell/butterfly strategies</li>
+</ul>
+
+<h2 id="code--repo">Code &amp; Repo</h2>
+
+<p>Full implementation available on <a href="https://github.com/leo-lightfoot/Yield_Curve_PCA">GitHub</a>.</p>
+
+        </div>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="post-author">
+                <div class="post-author-info">
+                    <strong>Abdul Malik</strong>
+                    <span>Capital Markets & Financial Technology</span>
+                </div>
+                <div class="post-author-links">
+                    <a href="https://www.linkedin.com/in/abdulmalik2737/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/leo-lightfoot" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://abdulmalik.de" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                </div>
+            </div>
+        </footer>
+
+    </article>
+
+    <!-- Related posts -->
+    
+    
+    
+    
+
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <span>© 2026 Abdul Malik</span>
+            <span class="footer-divider">·</span>
+            <a href="https://abdulmalik.de" target="_blank" rel="noopener noreferrer">abdulmalik.de</a>
+        </div>
+        <div class="footer-right">
+            <a href="https://github.com/leo-lightfoot" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/abdulmalik2737/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

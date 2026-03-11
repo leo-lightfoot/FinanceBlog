@@ -1,0 +1,16 @@
+<header class="site-header">
+    <div class="header-inner">
+        <a href="{{ '/' | relative_url }}" class="site-logo">
+            <span class="logo-name">Abdul Malik</span>
+            <span class="logo-divider">/</span>
+            <span class="logo-blog">Finance & Technology</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">All</a>
+            <a href="{{ '/categories/projects' | relative_url }}" class="nav-link {% if page.url contains 'projects' %}active{% endif %}">Projects</a>
+            <a href="{{ '/categories/articles' | relative_url }}" class="nav-link {% if page.url contains 'articles' %}active{% endif %}">Articles</a>
+            <a href="{{ '/categories/job-prep' | relative_url }}" class="nav-link {% if page.url contains 'job-prep' %}active{% endif %}">Job Prep</a>
+            <a href="{{ site.author.portfolio }}" class="nav-link nav-link--portfolio" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+        </nav>
+    </div>
+</header>
