@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MoneyWise — Gamified Financial Literacy"
+title: "MoneyWise: Gamified Financial Literacy"
 subtitle: "A React-based interactive game that teaches credit management and personal finance through real-life decision-making scenarios."
 category: Projects
 date: 2026-03-12
@@ -11,7 +11,7 @@ image: /assets/images/Fin_Literacy.png
 
 ## Overview
 
-MoneyWise is an interactive browser game built to make financial literacy accessible and engaging. Players navigate a series of real-life financial scenarios — managing credit, spending decisions, and savings — while tracking their **Credit Power** and **Savings** in real time.
+MoneyWise is an interactive browser game built to make financial literacy accessible and engaging. Players navigate a series of real-life financial scenarios like managing credit, spending decisions, and savings while tracking their **Credit Power** and **Savings** in real time.
 
 The core idea: learning personal finance should feel like playing a game, not reading a textbook.
 
@@ -19,7 +19,7 @@ The core idea: learning personal finance should feel like playing a game, not re
 
 ## Motivation
 
-Financial literacy is one of the most underdeveloped life skills for young adults. Most people learn about credit scores, interest rates, and budgeting only after making costly mistakes. MoneyWise flips that — put players in scenarios where the consequences of poor financial decisions are felt in a safe, simulated environment.
+Financial literacy is one of the most underdeveloped life skills for young adults. Most people learn about credit scores, interest rates, and budgeting only after making costly mistakes. MoneyWise flips that. It put players in scenarios where the consequences of poor financial decisions are felt in a safe, simulated environment.
 
 The game format naturally drives engagement: every choice has a visible impact on your Credit Power score and Savings balance, creating an immediate feedback loop that textbooks simply can't replicate.
 
@@ -44,10 +44,10 @@ The game format naturally drives engagement: every choice has a visible impact o
 
 ## Gameplay Loop
 
-1. Player is presented with a real-life financial scenario (e.g. *"You need a new phone — buy outright, finance it, or wait?"*)
+1. Player is presented with a real-life financial scenario (e.g. *"You need a new phone:  buy outright, finance it, or wait?"*)
 2. Choose from 2–3 options, each with different financial implications
 3. Credit Power and Savings update immediately based on the choice
-4. A brief explanation shows why the outcome occurred — the learning moment
+4. A brief explanation shows why the outcome occurred
 5. Move to the next scenario
 
 This loop reinforces cause-and-effect thinking around financial decisions in a way that sticks.
@@ -56,7 +56,7 @@ This loop reinforces cause-and-effect thinking around financial decisions in a w
 
 - Gamification is a genuinely effective delivery mechanism for financial education as engagement stays high when stakes feel real. The duolingo playbook.
 - MobX's observable state makes it easy to keep UI perfectly in sync with game state without boilerplate.
-- Designing scenarios requires as much domain knowledge (personal finance) as technical skill — the game is only as good as the quality of its dilemmas.
+- Designing scenarios requires as much domain knowledge (personal finance) as technical skill. The game is only as good as the quality of its dilemmas.
 
 ## Links
 
