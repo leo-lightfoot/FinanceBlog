@@ -1,21 +1,3 @@
-// ── Theme Toggle ─────────────────────────────────────────────
-const html = document.documentElement;
-const darkBtn = document.getElementById('darkBtn');
-const lightBtn = document.getElementById('lightBtn');
-
-function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    darkBtn.classList.toggle('active', theme === 'dark');
-    lightBtn.classList.toggle('active', theme === 'light');
-}
-
-const saved = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(saved || (prefersDark ? 'dark' : 'light'));
-
-darkBtn.addEventListener('click', () => { applyTheme('dark'); localStorage.setItem('theme', 'dark'); });
-lightBtn.addEventListener('click', () => { applyTheme('light'); localStorage.setItem('theme', 'light'); });
-
 // ── Spotlight Effect ──────────────────────────────────────────
 const spotlight = document.getElementById('spotlight');
 let spotTimeout;

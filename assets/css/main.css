@@ -75,45 +75,6 @@ img { max-width: 100%; height: auto; display: block; }
 .spotlight.active { opacity: 1; }
 
 /* ================================================
-   THEME TOGGLE (identical to portfolio)
-   ================================================ */
-.theme-toggle {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 1000;
-    display: flex;
-    gap: 0.25rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 0.25rem;
-    box-shadow: var(--shadow);
-}
-.theme-toggle button {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.35rem 0.75rem;
-    border: none;
-    border-radius: 16px;
-    background: transparent;
-    color: var(--text-secondary);
-    font-family: var(--font);
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-.theme-toggle button.active {
-    background: var(--accent);
-    color: #fff;
-}
-.theme-toggle button:not(.active):hover {
-    background: var(--accent-bg);
-    color: var(--text-primary);
-}
-
-/* ================================================
    SITE HEADER
    ================================================ */
 .site-header {
@@ -772,8 +733,7 @@ img { max-width: 100%; height: auto; display: block; }
     .post-hero-image { height: 220px; }
     .post-author { flex-direction: column; align-items: flex-start; }
     .related-posts-grid { grid-template-columns: 1fr; }
-    .theme-toggle { top: 1rem; right: 1rem; }
-    .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+.footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
 }
 
 @media (max-width: 480px) {
