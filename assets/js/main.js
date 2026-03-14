@@ -1,3 +1,23 @@
+// ── Hamburger Menu ────────────────────────────────────────────
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.querySelector('.site-nav');
+
+if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Close menu when a nav link is clicked
+    siteNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            siteNav.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
 // ── Spotlight Effect ──────────────────────────────────────────
 const spotlight = document.getElementById('spotlight');
 let spotTimeout;
