@@ -65,11 +65,11 @@ A 75/25 train/test split was used throughout, with stratification to preserve th
 
 ### The standout story: Naive Bayes
 
-Naive Bayes achieved a reasonable overall accuracy of 78.7%, but its confusion matrix reveals a serious flaw — it classified **97.3% of Bullish tweets correctly** while getting **only 54% of Bearish tweets right**. In practice, this model has a strong bias toward predicting Bullish, which would be dangerous in any real application. Missing a bearish signal in a portfolio context is exactly the kind of error that costs money.
+Naive Bayes achieved a reasonable overall accuracy of 78.7%, but its confusion matrix reveals a serious flaw. it classified **97.3% of Bullish tweets correctly** while getting **only 54% of Bearish tweets right**. In practice, this model has a strong bias toward predicting Bullish, which would be dangerous in any real application. Missing a bearish signal in a portfolio context is exactly the kind of error that costs money.
 
 ### Logistic Regression: balanced but limited
 
-Logistic Regression was the most balanced model — 84% recall on Bearish tweets and 68% on Bullish. It was also the most interpretable: by examining the model's coefficients, we can see directly which words drove each prediction.
+Logistic Regression was the most balanced model: 84% recall on Bearish tweets and 68% on Bullish. It was also the most interpretable: by examining the model's coefficients, we can see directly which words drove each prediction.
 
 **Top words driving Bullish predictions:** *up, beat, raise, rise, higher, buy, upgrade, gain, jump*
 
@@ -92,7 +92,7 @@ Examining the Neural Network's 115 misclassified tweets reveals why this problem
 
 > *"EIA forecasts U.S. shale oil output to climb by 49,000 barrels a day in December"*
 
-The first contains words like "buying" that typically signal Bullish sentiment. The second includes "climb" — a positive word — despite describing an output increase that could be bearish for prices. Context and domain knowledge matter enormously here.
+The first contains words like "buying" that typically signal Bullish sentiment. The second includes "climb", a positive word, despite describing an output increase that could be bearish for prices. Context and domain knowledge matter enormously here.
 
 **Predicted Bearish, actually Bullish:**
 > *"Fed's 'bazooka' soothes dollar funding squeeze"*
@@ -105,13 +105,13 @@ The first contains words like "buying" that typically signal Bullish sentiment. 
 
 ## FinBERT: Context Changes Everything
 
-FinBERT is a version of BERT — one of the most significant advances in natural language AI, fine-tuned specifically on financial documents. Rather than treating words as isolated signals, it reads each tweet as a sequence and understands relationships between words.
+FinBERT is a version of BERT, one of the most significant advances in natural language AI, fine-tuned specifically on financial documents. Rather than treating words as isolated signals, it reads each tweet as a sequence and understands relationships between words.
 
 The approach here was to use FinBERT purely as a **feature extractor**: each tweet was passed through the model to produce a rich numerical representation capturing its financial meaning, then a simple Logistic Regression was trained on those representations.
 
-The result: **87.7% accuracy and 0.943 ROC-AUC** — the best of all models tested, with strong recall on both Bearish (87.3%) and Bullish (87.9%) classes.
+The result: **87.7% accuracy and 0.943 ROC-AUC**, the best of all models tested, with strong recall on both Bearish (87.3%) and Bullish (87.9%) classes.
 
-Crucially, FinBERT is the only model that could plausibly handle tweets like the "bazooka" example above — because it was trained on enough financial text to understand that a central bank intervention, however colourfully described, is typically market-positive.
+Crucially, FinBERT is the only model that could plausibly handle tweets like the "bazooka" example above; because it was trained on enough financial text to understand that a central bank intervention, however colourfully described, is typically market-positive.
 
 ---
 
@@ -121,13 +121,13 @@ Crucially, FinBERT is the only model that could plausibly handle tweets like the
 TF-IDF models learned a credible financial vocabulary and performed well on straightforward tweets. They struggle the moment sentiment depends on context rather than individual words.
 
 **2. High accuracy can hide dangerous blind spots.**
-Naive Bayes looked reasonable on paper but was nearly blind to Bearish signals. In any real-world application — risk management, trade signal generation, news monitoring — recall on each class matters as much as overall accuracy.
+Naive Bayes looked reasonable on paper but was nearly blind to Bearish signals. In any real-world application like risk management, trade signal generation, news monitoring, recall on each class matters as much as overall accuracy.
 
 **3. Financial language is genuinely ambiguous.**
 Many misclassified tweets were ambiguous even by human standards. Words like "climb", "squeeze", and "bazooka" carry very different meanings depending on what surrounds them. This is precisely the problem FinBERT was built to address.
 
 **4. Pre-trained financial models meaningfully outperform bag-of-words.**
-FinBERT's improvement over the best TF-IDF model was modest in percentage terms but consistent across both classes — and the gap would likely widen on more complex or nuanced financial text.
+FinBERT's improvement over the best TF-IDF model was modest in percentage terms but consistent across both classes and the gap would likely widen on more complex or nuanced financial text.
 
 ---
 
