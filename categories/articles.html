@@ -18,7 +18,7 @@ permalink: /categories/articles/
         <article class="post-card">
             {% if post.image %}
             <div class="post-card-image">
-                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
             </div>
             {% endif %}
             <div class="post-card-content">

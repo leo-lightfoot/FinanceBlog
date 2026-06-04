@@ -1,3 +1,17 @@
+// ── Google Analytics — init (loader <script> is in <head>) ────
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-9C3D6NBD6G');
+
+// ── Google Fonts — non-blocking load (avoids render-blocking link in <head>) ──
+(function () {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+    document.head.appendChild(link);
+}());
+
 // ── Hamburger Menu ────────────────────────────────────────────
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
@@ -68,5 +82,17 @@ if ('IntersectionObserver' in window) {
         card.style.transform = 'translateY(16px)';
         card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         observer.observe(card);
+    });
+}
+
+// ── Copy link button (post pages) ────────────────────────────
+const copyBtn = document.querySelector('.share-btn--copy');
+if (copyBtn) {
+    const originalHTML = copyBtn.innerHTML;
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.innerHTML = originalHTML; }, 2000);
+        });
     });
 }
