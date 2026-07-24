@@ -6,7 +6,7 @@ category: Projects
 date: 2026-03-13
 tags: [Python, NLP, Machine Learning, FinBERT, Sentiment Analysis, Finance]
 github: "https://github.com/leo-lightfoot/TwitterFinancialSentiment-BinaryAnalysis"
-image: /assets/images/twitter_banner.png
+image: /assets/images/twitter_banner.webp
 ---
 
 Financial markets move on information, and increasingly, that information flows through social media before it reaches anywhere else. A tweet from an analyst, a headline reposted by a trader, a single word like "downgrade" are all signals that can move prices. The question this project explores is simple: **Can a machine be trained to reliably tell a bullish post from a bearish one?**

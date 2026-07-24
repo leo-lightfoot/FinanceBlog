@@ -5,7 +5,7 @@ subtitle: "My master's thesis at Frankfurt School asked whether language models 
 category: Articles
 date: 2026-06-04
 tags: [Portfolio Management, AI, LLMs, Quantitative Finance, FinTech, Frankfurt School]
-image: /assets/images/LLM-Portfolio_1.png
+image: /assets/images/LLM-Portfolio_1.webp
 ---
 
 Numbers run portfolio management. That sounds obvious, but it shapes everything: how risk is measured, how capital is allocated, which decisions get made and which get ignored.

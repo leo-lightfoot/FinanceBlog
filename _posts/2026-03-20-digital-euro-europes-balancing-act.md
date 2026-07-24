@@ -5,7 +5,7 @@ subtitle: "Central banks are building digital currencies, but not all of them ar
 category: Articles
 date: 2026-03-20
 tags: [Digital Euro, CBDC, ECB, Central Banking, Monetary Policy, FinTech]
-image: /assets/images/Digital_Euro.png
+image: /assets/images/Digital_Euro.webp
 ---
 
 Central banks around the world are building digital currencies. But they are not all solving the same problem.

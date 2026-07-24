@@ -5,7 +5,7 @@ subtitle: "The AI lost. But the story behind why is more interesting than the he
 category: Articles
 date: 2026-06-10
 tags: [Portfolio Management, AI, LLMs, Quantitative Finance, FinTech, Frankfurt School]
-image: /assets/images/LLM-Portfolio_2.png
+image: /assets/images/LLM-Portfolio_2.webp
 ---
 
 When I started this research, I expected the AI portfolio to win.

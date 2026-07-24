@@ -1,0 +1,8 @@
+# Jekyll build output — GitHub Actions builds this fresh on every deploy
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
